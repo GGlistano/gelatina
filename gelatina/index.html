@@ -357,8 +357,8 @@
 
     <script>
         function randomizeViewerCount() {
-            const minViewers = 550;
-            const maxViewers = 650;
+            const minViewers = 400;
+            const maxViewers = 999;
             const randomCount = Math.floor(Math.random() * (maxViewers - minViewers + 1)) + minViewers;
             document.getElementById('viewerCounter').textContent = randomCount + ' PERSONAIS ESTÁN VIENDO AHORA.';
         }
