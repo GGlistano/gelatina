@@ -1,286 +1,383 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="max-image-preview:large">
+    <title>Truco de la Gelatina</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <title>Truco de la Gelatina - Truco de la Gelatina</title>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
 
-    <!-- Preconnect para melhor performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #000;
+        }
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400;500;600&family=Montserrat:wght@600&family=Reem+Kufi:wght@600&display=swap" rel="stylesheet">
+        .header {
+            background-color: #000;
+            padding: 30px 20px 20px;
+            text-align: center;
+        }
 
-    <!-- Estilos Principais -->
-    <link rel="stylesheet" href="css/styles.css">
+        .header h1 {
+            color: #fff;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGGJBYEYFX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QGGJBYEYFX');
-    </script>
+        .header p {
+            color: #fff;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .header .red-text {
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        .header .subtitle {
+            font-size: 14px;
+            color: #ccc;
+            margin-top: 15px;
+        }
+
+        .video-container {
+            position: relative;
+            padding: 20px;
+            background-color: #000;
+            text-align: center;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            max-width: 460px;
+            height: 260px;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 0, 0, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
+        }
+
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 25px solid #fff;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            margin-left: 5px;
+        }
+
+        .doctor-section {
+            background-color: #0066a1;
+            padding: 30px 20px;
+        }
+
+        .doctor-image {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .doctor-image img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .doctor-name {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .doctor-info {
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #fff;
+            padding: 0 10px;
+        }
+
+        .comments-section {
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .comments-title {
+            color: #333;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .comment {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .comment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .comment-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 12px;
+        }
+
+        .comment-name {
+            font-weight: bold;
+            color: #365899;
+            font-size: 14px;
+        }
+
+        .comment-text {
+            color: #333;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .comment-footer {
+            color: #90949c;
+            font-size: 12px;
+        }
+
+        .footer {
+            background-color: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            color: #333;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Seção Hero -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="spacer" style="height: 50px;"></div>
-
-            <h1 class="hero-title">
-                REVELADO:
-            </h1>
-
-            <h2 class="hero-subtitle">
-                Este es el Nuevo Truco que los<br>
-                Celebridades usan para perder de 10<br>
-                a 40 kilos en solo 2 Semanas!
-            </h2>
-
-            <p class="hero-description">
-                ( No comas más de una porción al día! )
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>REVELADO:</h1>
+            <p>
+                Este es el Nuevo Truco que los Celebridades usan para perder de
+                <span class="red-text">10 a 40 kilos</span> en solo
+                <span class="red-text">2 Semanas!</span>
             </p>
-
-            <img src="images/Design-sem-nome-5.png" alt="Truco de la Gelatina" class="hero-image">
+            <p class="subtitle">( No comas más de una porción al día! )</p>
         </div>
-    </section>
 
-    <!-- Seção de Vídeo -->
-    <section class="video-section">
+        <!-- Video -->
         <div class="video-container">
-            <div style="text-align: center;">
-                <img src="https://trucogelatinaoficial.com/wp-content/uploads/2025/10/Design-sem-nome-4.png"
-                     alt="Dr. Juan Rivera"
-                     class="doctor-image">
+            <div class="video-placeholder">
+                <div class="play-button"></div>
             </div>
         </div>
 
-        <div class="video-info">
-            <h3 class="video-info-title">Dr. Juan Rivera</h3>
-            <p class="video-info-text">
+        <!-- Doctor Section -->
+        <div class="doctor-section">
+            <div class="doctor-image">
+                <img src="images/doutor juan.png" alt="Dr. Juan Rivera">
+            </div>
+            <div class="doctor-name">Dr. Juan Rivera</div>
+            <div class="doctor-info">
                 1.5M+ Cirugías y consultas bien sucedidas, con amplia experiencia en salud, bienestar
-                y métodos de adelgazamiento rápido, saludable, duradero y sostenible
-                (Dr. Juan estudió ciencia, en rutas y técnicas para adelgazar de forma saludable,
-                manteniendo metabólicamente funcional toda la salud de la persona y no dañando
-                la salud, como los ayunos intermitentes, las dietas rigurosas y los ejercicios
-                locos e inadecuados).
-            </p>
+                y métodos de adelgazamiento rápido, saludable, duradero y sostenible (Dr. Juan estudió
+                ciencia, en rutas y técnicas para adelgazar de forma saludable, manteniendo metabólicamente
+                funcional toda la salud de la persona y no dañando la salud, como los ayunos intermitentes,
+                las dietas rigurosas y los ejercicios locos e inadecuados).
+            </div>
         </div>
-    </section>
 
-    <!-- Seção de Depoimentos -->
-    <section class="testimonials-section">
-        <div class="container">
-            <h2 class="testimonials-title">15 Comentários</h2>
+        <!-- Comments Section -->
+        <div class="comments-section">
+            <div class="comments-title">15 Comentarios</div>
 
-            <!-- Depoimento 1 -->
-            <div class="testimonial-card fade-in">
-                <div class="testimonial-header">
-                    <img src="https://trucogelatinaoficial.com/wp-content/uploads/2025/10/mulher-01-150x150.jpeg"
-                         alt="Verónica Sánchez"
-                         class="testimonial-avatar">
-                    <div>
-                        <div class="testimonial-name">Verónica Sánchez</div>
-                    </div>
+            <!-- Comment 1 - Veronica Sanches -->
+            <div class="comment">
+                <div class="comment-header">
+                    <img src="images/veronica sanches.jpg" alt="Verónica Sánchez" class="comment-avatar">
+                    <div class="comment-name">Verónica Sánchez</div>
                 </div>
-                <p class="testimonial-text">
-                    Empecé a hacerlo y comencé a ver esos primeros kilos bajar en dos días,
-                    pero el resultado más radical vino en la primera semana. ¡Fue un alivio!
-                    Ahora ya estoy en el peso ideal y me quedé haciendo esto para mantenerlo,
-                    porque funcionó realmente bien.
-                </p>
-                <div class="testimonial-footer">
-                    Me Gusta · Comentar · Compartir · 1 h
+                <div class="comment-text">
+                    Empecé a hacerlo y comencé a ver esos primeros kilos bajar en dos días, pero el resultado
+                    más radical vino en la primera semana. ¡Fue un alivio! Ahora ya estoy en el peso ideal y
+                    me quedé haciendo esto para mantenerlo, porque funcionó realmente bien.
                 </div>
+                <div class="comment-footer">Me Gusta · Comentar · Compartir · 1 h</div>
             </div>
 
-            <!-- Depoimento 2 -->
-            <div class="testimonial-card fade-in">
-                <div class="testimonial-header">
-                    <img src="https://trucogelatinaoficial.com/wp-content/uploads/2025/10/mulher-02-150x150.jpeg"
-                         alt="Verónica Sánchez"
-                         class="testimonial-name">
-                    <div>
-                        <div class="testimonial-name">Verónica Sánchez</div>
-                    </div>
+            <!-- Comment 2 - Leticia Rimere -->
+            <div class="comment">
+                <div class="comment-header">
+                    <img src="images/leticia rimere.png" alt="Leticia Rimere" class="comment-avatar">
+                    <div class="comment-name">Leticia Rimere</div>
                 </div>
-                <p class="testimonial-text">
-                    Hice exactamente lo que el doctor enseñó, y en menos de 10 días perdí 6 kilos.
-                    Lo voy a seguir haciendo, porque quiero perder más, pero ya me siento tan bien
-                    conmigo misma y el único cambio que hice fue empezar a hacer esto.
-                </p>
-                <div class="testimonial-footer">
-                    Me Gusta · Comentar · Compartir · 2 h
+                <div class="comment-text">
+                    Hice exactamente lo que el doctor enseñó, y en menos de 10 días perdí 6 kilos. Lo voy a
+                    seguir haciendo, porque quiero perder más, pero ya me siento tan bien conmigo misma y el
+                    único cambio que hice fue empezar a hacer esto.
                 </div>
+                <div class="comment-footer">Me Gusta · Comentar · Compartir · 2 h</div>
             </div>
 
-            <!-- Depoimento 3 -->
-            <div class="testimonial-card fade-in">
-                <div class="testimonial-header">
-                    <img src="https://trucogelatinaoficial.com/wp-content/uploads/2025/10/mulher-04-150x150.jpeg"
-                         alt="Ana Laura González"
-                         class="testimonial-avatar">
-                    <div>
-                        <div class="testimonial-name">Ana Laura González</div>
-                    </div>
+            <!-- Comment 3 - Ana Laura -->
+            <div class="comment">
+                <div class="comment-header">
+                    <img src="images/analaura.jpeg" alt="Ana Laura González" class="comment-avatar">
+                    <div class="comment-name">Ana Laura González</div>
                 </div>
-                <p class="testimonial-text">
-                    Mi esposo y yo lo estamos haciendo todas las mañanas al despertar, exactamente
-                    como lo explicó el doctor, y mira, ya he desinflamado bastante. Perdí más de 7 kilos
-                    en 10 días haciéndolo y mi esposo perdió 8. Creo que por ser hombre adelgaza más rápido,
-                    ¡pero esto realmente es increíble!
-                </p>
-                <div class="testimonial-footer">
-                    Me Gusta · Comentar · Compartir · 1 h
+                <div class="comment-text">
+                    Mi esposo y yo lo estamos haciendo todas las mañanas al despertar, exactamente como lo
+                    explicó el doctor, y mira, ya he desinflamado bastante. Perdí más de 7 kilos en 10 días
+                    haciéndolo y mi esposo perdió 8. Creo que por ser hombre adelgaza más rápido, ¡pero esto
+                    realmente es increíble!
                 </div>
+                <div class="comment-footer">Me Gusta · Comentar · Compartir · 1 h</div>
             </div>
 
-            <!-- Depoimento 4 -->
-            <div class="testimonial-card fade-in">
-                <div class="testimonial-header">
-                    <img src="https://trucogelatinaoficial.com/wp-content/uploads/2025/10/mulher-05-150x150.jpeg"
-                         alt="Guadalupe Hernández"
-                         class="testimonial-avatar">
-                    <div>
-                        <div class="testimonial-name">Guadalupe Hernández</div>
-                    </div>
+            <!-- Comment 4 - Guadalupe -->
+            <div class="comment">
+                <div class="comment-header">
+                    <img src="images/guadalupe.jpeg" alt="Guadalupe Hernández" class="comment-avatar">
+                    <div class="comment-name">Guadalupe Hernández</div>
                 </div>
-                <p class="testimonial-text">
+                <div class="comment-text">
                     Jesucristo… el mes antepasado gasté una fortuna en una pluma de Mounjaro, y tuve
-                    prácticamente los mismos resultados con este truco. Nunca más voy a comprar una
-                    pluma de Mounjaro, voy a vivir haciendo este truco. En serio, dio exactamente
-                    el mismo resultado, solo que sin efectos secundarios.
-                </p>
-                <div class="testimonial-footer">
-                    Me Gusta · Comentar · Compartir · 3 h
+                    prácticamente los mismos resultados con este truco. Nunca más voy a comprar una pluma
+                    de Mounjaro, voy a vivir haciendo este truco. En serio, dio exactamente el mismo resultado,
+                    solo que sin efectos secundarios.
                 </div>
+                <div class="comment-footer">Me Gusta · Comentar · Compartir · 3 h</div>
             </div>
 
-            <!-- Depoimento 5 -->
-            <div class="testimonial-card fade-in">
-                <div class="testimonial-header">
-                    <img src="https://trucogelatinaoficial.com/wp-content/uploads/2025/10/mulher-06-150x150.jpeg"
-                         alt="Claudia Jiménez"
-                         class="testimonial-avatar">
-                    <div>
-                        <div class="testimonial-name">Claudia Jiménez</div>
-                    </div>
+            <!-- Comment 5 - Maria del Carmen -->
+            <div class="comment">
+                <div class="comment-header">
+                    <img src="images/maria del.jpeg" alt="María del Carmen Rodríguez" class="comment-avatar">
+                    <div class="comment-name">María del Carmen Rodríguez</div>
                 </div>
-                <p class="testimonial-text">
-                    Mi hija me mostró este video y le dije que era una tontería… ahora aquí estoy,
-                    haciendo el truco y teniendo que venir a felicitar porque funcionó muy bien 😂😂😂.
-                    Ya logré perder 11 kilos, ¡muchísimas gracias!
-                </p>
-                <div class="testimonial-footer">
-                    Me Gusta · Comentar · Compartir · 2 h
+                <div class="comment-text">
+                    ¿En serio? Estaba pensando en comprar unas plumas de Mounjaro, ¿será que mejor lo dejo
+                    y pruebo este truco primero? ¿Qué me recomiendas?
                 </div>
+                <div class="comment-footer">Me Gusta · Comentar · Compartir · 3 h</div>
             </div>
 
-            <!-- Depoimento 6 -->
-            <div class="testimonial-card fade-in">
-                <div class="testimonial-header">
-                    <img src="https://trucogelatinaoficial.com/wp-content/uploads/2025/10/mulher-07-150x150.jpg"
-                         alt="Adriana Torres"
-                         class="testimonial-avatar">
-                    <div>
-                        <div class="testimonial-name">Adriana Torres</div>
-                    </div>
+            <!-- Comment 6 - Guadalupe Response -->
+            <div class="comment" style="margin-left: 30px;">
+                <div class="comment-header">
+                    <img src="images/guadalupe.jpeg" alt="Guadalupe Hernández" class="comment-avatar">
+                    <div class="comment-name">Guadalupe Hernández</div>
                 </div>
-                <p class="testimonial-text">
-                    Hoy cumplí exactamente 30 días usándolo y logré perder 14 kilos. Esto es
-                    increíblemente bueno, y además es fácil de hacer. ¡Que Dios los bendiga
-                    por mostrarnos esto a nosotras las mujeres!
-                </p>
-                <div class="testimonial-footer">
-                    Me Gusta · Comentar · Compartir · 2 h
+                <div class="comment-text">
+                    No las compres, mujer, no vale la pena. Es mucho mejor que hagas este truco, te dará el
+                    mismo resultado y es infinitamente más barato de hacer, en serio.
                 </div>
+                <div class="comment-footer">Me Gusta · Comentar · Compartir · 1 h</div>
             </div>
 
-            <!-- Depoimento 7 -->
-            <div class="testimonial-card fade-in">
-                <div class="testimonial-header">
-                    <img src="https://trucogelatinaoficial.com/wp-content/uploads/2025/10/mulher-08-150x150.jpeg"
-                         alt="Beatriz Mendonza"
-                         class="testimonial-avatar">
-                    <div>
-                        <div class="testimonial-name">Beatriz Mendonza</div>
-                    </div>
+            <!-- Comment 7 - Maria Response -->
+            <div class="comment" style="margin-left: 30px;">
+                <div class="comment-header">
+                    <img src="images/maria del.jpeg" alt="María del Carmen Rodríguez" class="comment-avatar">
+                    <div class="comment-name">María del Carmen Rodríguez</div>
                 </div>
-                <p class="testimonial-text">
-                    Wow, empecé a hacerlo anteayer y hoy ya bajé dos kilos y sin hinchazón.
-                    ¡Qué locura! El próximo mes vuelvo para contar cuántos kilos perdí en total,
-                    pero desde ya estoy impresionada…
-                </p>
-                <div class="testimonial-footer">
-                    Me Gusta · Comentar · Compartir · 3 h
+                <div class="comment-text">
+                    Ay, qué bueno saberlo, porque ya estaba por endeudarme para comprar esas plumas. ¡Gracias ❤️!
                 </div>
+                <div class="comment-footer">Me Gusta · Comentar · Compartir · 45 min</div>
+            </div>
+
+            <!-- Comment 8 - Claudia -->
+            <div class="comment">
+                <div class="comment-header">
+                    <img src="images/claudia.jpeg" alt="Claudia Jiménez" class="comment-avatar">
+                    <div class="comment-name">Claudia Jiménez</div>
+                </div>
+                <div class="comment-text">
+                    Mi hija me mostró este video y le dije que era una tontería… ahora aquí estoy, haciendo
+                    el truco y teniendo que venir a felicitar porque funcionó muy bien 😂😂😂. Ya logré perder
+                    11 kilos, ¡muchísimas gracias!
+                </div>
+                <div class="comment-footer">Me Gusta · Comentar · Compartir · 2 h</div>
+            </div>
+
+            <!-- Comment 9 - Adriana -->
+            <div class="comment">
+                <div class="comment-header">
+                    <img src="images/adriana.jpg" alt="Adriana Torres" class="comment-avatar">
+                    <div class="comment-name">Adriana Torres</div>
+                </div>
+                <div class="comment-text">
+                    Hoy cumplí exactamente 30 días usándolo y logré perder 14 kilos. Esto es increíblemente
+                    bueno, y además es fácil de hacer. ¡Que Dios los bendiga por mostrarnos esto a nosotras
+                    las mujeres!
+                </div>
+                <div class="comment-footer">Me Gusta · Comentar · Compartir · 2 h</div>
+            </div>
+
+            <!-- Comment 10 - Beatriz -->
+            <div class="comment">
+                <div class="comment-header">
+                    <img src="images/beatriz.jpeg" alt="Beatriz Mendonza" class="comment-avatar">
+                    <div class="comment-name">Beatriz Mendonza</div>
+                </div>
+                <div class="comment-text">
+                    Wow, empecé a hacerlo anteayer y hoy ya bajé dos kilos y sin hinchazón. ¡Qué locura!
+                    El próximo mes vuelvo para contar cuántos kilos perdí en total, pero desde ya estoy
+                    impresionada…
+                </div>
+                <div class="comment-footer">Me Gusta · Comentar · Compartir · 3 h</div>
             </div>
         </div>
-    </section>
 
-    <!-- Seção do Médico -->
-    <section class="doctor-section">
-        <div class="doctor-photo">
-            <img src="https://trucogelatinaoficial.com/wp-content/uploads/2025/10/Design-sem-nome-1.png"
-                 alt="Dr. Juan Rivera">
+        <!-- Footer -->
+        <div class="footer">
+            <p>Copywright © Truco de la Gelatina</p>
         </div>
+    </div>
 
-        <div class="doctor-content">
-            <h3 class="doctor-content-title">
-                Conoce Todo Sobre La Barriga
-            </h3>
-            <p class="doctor-content-text">
-                También Los Problemas Que Traen El Tener Obesidad Y El Sobrepeso Para Tu Salud.
-                Así Como El Truco De La Gelatina Para Bajar De 10 a 40 Kilos Solo En 2 Semanas
-            </p>
-        </div>
-    </section>
-
-    <!-- Seção CTA (Call to Action) -->
-    <section class="cta-section esconder">
-        <a href="https://lp.trucogelatinaoficial.com/click"
-           class="cta-button"
-           id="smartplayer-click-event-2">
-            <img src="https://trucogelatinaoficial.com/wp-content/uploads/2025/10/Inserir-um-titulo.png"
-                 alt="Quiero Conocer El Truco De La Gelatina Ahora!">
-        </a>
-        <div style="height: 30px;"></div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p class="footer-text">
-            Copywright © Truco de la Gelatina
-        </p>
-    </footer>
-
-    <!-- Scripts -->
     <script src="js/utm-tracker.js"></script>
-
-    <!-- Script para vTurb SmartPlayer -->
-    <script>
-        // Script de integração com vTurb SmartPlayer
-        document.addEventListener('DOMContentLoaded', function() {
-            const vturbPlayer = document.querySelector('vturb-smartplayer');
-            if (vturbPlayer) {
-                vturbPlayer.addEventListener('player:ready', function() {
-                    console.log('vTurb Player carregado com sucesso');
-                });
-            }
-
-            // Mostrar CTA após interação do vídeo
-            const ctaSection = document.querySelector('.cta-section');
-            if (ctaSection) {
-                setTimeout(function() {
-                    ctaSection.classList.remove('esconder');
-                }, 5000); // Mostrar após 5 segundos
-            }
-        });
-    </script>
 </body>
 </html>
