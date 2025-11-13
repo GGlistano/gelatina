@@ -13,32 +13,32 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
+            background-color: #fff;
+            color: #000;
         }
 
         .container {
-            max-width: 500px;
+            max-width: 900px;
             margin: 0 auto;
-            background-color: #000;
+            background-color: #fff;
         }
 
         .header {
-            background-color: #000;
+            background-color: #fff;
             padding: 30px 20px 20px;
             text-align: center;
         }
 
         .header h1 {
-            color: #fff;
-            font-size: 28px;
+            color: #000;
+            font-size: 32px;
             font-weight: bold;
             margin-bottom: 15px;
         }
 
         .header p {
-            color: #fff;
-            font-size: 16px;
+            color: #000;
+            font-size: 18px;
             line-height: 1.5;
             margin-bottom: 10px;
         }
@@ -49,15 +49,15 @@
         }
 
         .header .subtitle {
-            font-size: 14px;
-            color: #ccc;
+            font-size: 16px;
+            color: #333;
             margin-top: 15px;
         }
 
         .video-container {
             position: relative;
             padding: 20px;
-            background-color: #000;
+            background-color: #fff;
             text-align: center;
         }
 
@@ -66,7 +66,7 @@
             font-size: 14px;
             font-weight: bold;
             text-align: center;
-            margin-bottom: 15px;
+            margin-top: 15px;
         }
 
         .doctor-section {
@@ -102,66 +102,74 @@
         }
 
         .comments-section {
-            background-color: #f5f5f5;
-            padding: 20px;
+            background-color: #fff;
+            padding: 30px 20px;
+            border-top: 1px solid #e5e5e5;
         }
 
         .comments-title {
-            color: #333;
-            font-size: 20px;
-            font-weight: bold;
-            text-align: center;
+            color: #1c1e21;
+            font-size: 17px;
+            font-weight: 600;
             margin-bottom: 20px;
         }
 
         .comment {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding-bottom: 20px;
         }
 
         .comment-header {
             display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #e0e0e0;
+            align-items: flex-start;
+            margin-bottom: 8px;
         }
 
         .comment-avatar {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             object-fit: cover;
-            margin-right: 12px;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .comment-content {
+            flex: 1;
         }
 
         .comment-name {
-            font-weight: bold;
-            color: #365899;
-            font-size: 14px;
+            font-weight: 600;
+            color: #385898;
+            font-size: 13px;
+            margin-bottom: 4px;
         }
 
         .comment-text {
-            color: #333;
+            color: #1c1e21;
             font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 10px;
+            line-height: 1.38;
+            margin-bottom: 6px;
         }
 
         .comment-footer {
-            color: #90949c;
+            color: #65676b;
             font-size: 12px;
+            margin-left: 50px;
+        }
+
+        .comment-reply {
+            margin-left: 50px;
+            margin-top: 12px;
         }
 
         .footer {
-            background-color: #f5f5f5;
+            background-color: #fff;
             padding: 20px;
             text-align: center;
-            color: #333;
-            font-size: 14px;
+            color: #65676b;
+            font-size: 13px;
+            border-top: 1px solid #e5e5e5;
         }
     </style>
 </head>
@@ -180,8 +188,8 @@
 
         <!-- Video -->
         <div class="video-container">
-            <div class="viewer-counter" id="viewerCounter">600 PERSONAIS ESTÁN VIENDO AHORA.</div>
             <vturb-smartplayer id="vid-69165bf2a9e1550a65751b55" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>
+            <div class="viewer-counter" id="viewerCounter">600 PERSONAIS ESTÁN VIENDO AHORA.</div>
         </div>
 
         <!-- Doctor Section -->
@@ -201,47 +209,46 @@
 
         <!-- Comments Section -->
         <div class="comments-section">
-            <div class="comments-title">15 Comentarios</div>
+            <div class="comments-title">10 Comentarios</div>
 
-            <!-- Comment 1 - Veronica Sanches -->
+            <!-- Comment 1 - Leticia Ramirez -->
+            <div class="comment">
+                <div class="comment-header">
+                    <img src="images/leticia rimere.png" alt="Leticia Ramírez" class="comment-avatar">
+                    <div class="comment-content">
+                        <div class="comment-name">Leticia Ramírez</div>
+                        <div class="comment-text">
+                            Empecé a hacerlo a comienzos del mes pasado y desde entonces he logrado perder 12 kilos. Realmente es muy bueno y fácil, el único problema es que la gente de verdad piensa que te hiciste alguna cirugía o que estás usando Ozempic jajaja.
+                        </div>
+                    </div>
+                </div>
+                <div class="comment-footer">Me Gusta · Comentar · Compartir · 35 min</div>
+            </div>
+
+            <!-- Comment 2 - Veronica Sanchez -->
             <div class="comment">
                 <div class="comment-header">
                     <img src="images/veronica sanches.jpg" alt="Verónica Sánchez" class="comment-avatar">
-                    <div class="comment-name">Verónica Sánchez</div>
+                    <div class="comment-content">
+                        <div class="comment-name">Verónica Sánchez</div>
+                        <div class="comment-text">
+                            Wow, la receta es súper simple y fácil. Esto debería divulgarse en todo el mundo, porque yo gasté muchísimo dinero en nutricionistas y no me sirvió de nada. ¡Mis felicitaciones para ustedes!
+                        </div>
+                    </div>
                 </div>
-                <div class="comment-text">
-                    Empecé a hacerlo y comencé a ver esos primeros kilos bajar en dos días, pero el resultado
-                    más radical vino en la primera semana. ¡Fue un alivio! Ahora ya estoy en el peso ideal y
-                    me quedé haciendo esto para mantenerlo, porque funcionó realmente bien.
-                </div>
-                <div class="comment-footer">Me Gusta · Comentar · Compartir · 1 h</div>
-            </div>
-
-            <!-- Comment 2 - Leticia Rimere -->
-            <div class="comment">
-                <div class="comment-header">
-                    <img src="images/leticia rimere.png" alt="Leticia Rimere" class="comment-avatar">
-                    <div class="comment-name">Leticia Rimere</div>
-                </div>
-                <div class="comment-text">
-                    Hice exactamente lo que el doctor enseñó, y en menos de 10 días perdí 6 kilos. Lo voy a
-                    seguir haciendo, porque quiero perder más, pero ya me siento tan bien conmigo misma y el
-                    único cambio que hice fue empezar a hacer esto.
-                </div>
-                <div class="comment-footer">Me Gusta · Comentar · Compartir · 2 h</div>
+                <div class="comment-footer">Me Gusta · Comentar · Compartir · 44 min</div>
             </div>
 
             <!-- Comment 3 - Ana Laura -->
             <div class="comment">
                 <div class="comment-header">
                     <img src="images/analaura.jpeg" alt="Ana Laura González" class="comment-avatar">
-                    <div class="comment-name">Ana Laura González</div>
-                </div>
-                <div class="comment-text">
-                    Mi esposo y yo lo estamos haciendo todas las mañanas al despertar, exactamente como lo
-                    explicó el doctor, y mira, ya he desinflamado bastante. Perdí más de 7 kilos en 10 días
-                    haciéndolo y mi esposo perdió 8. Creo que por ser hombre adelgaza más rápido, ¡pero esto
-                    realmente es increíble!
+                    <div class="comment-content">
+                        <div class="comment-name">Ana Laura González</div>
+                        <div class="comment-text">
+                            Mi esposo y yo lo estamos haciendo todas las mañanas al despertar, exactamente como lo explicó el doctor, y mira, ya he desinflamado bastante. Perdí más de 7 kilos en 10 días haciéndolo y mi esposo perdió 8. Creo que por ser hombre adelgaza más rápido, ¡pero esto realmente es increíble!
+                        </div>
+                    </div>
                 </div>
                 <div class="comment-footer">Me Gusta · Comentar · Compartir · 1 h</div>
             </div>
@@ -250,51 +257,54 @@
             <div class="comment">
                 <div class="comment-header">
                     <img src="images/guadalupe.jpeg" alt="Guadalupe Hernández" class="comment-avatar">
-                    <div class="comment-name">Guadalupe Hernández</div>
+                    <div class="comment-content">
+                        <div class="comment-name">Guadalupe Hernández</div>
+                        <div class="comment-text">
+                            Jesucristo… el mes antepasado gasté una fortuna en una pluma de Mounjaro, y tuve prácticamente los mismos resultados con este truco. Nunca más voy a comprar una pluma de Mounjaro, voy a vivir haciendo este truco. En serio, dio exactamente el mismo resultado, solo que sin efectos secundarios.
+                        </div>
+                    </div>
                 </div>
-                <div class="comment-text">
-                    Jesucristo… el mes antepasado gasté una fortuna en una pluma de Mounjaro, y tuve
-                    prácticamente los mismos resultados con este truco. Nunca más voy a comprar una pluma
-                    de Mounjaro, voy a vivir haciendo este truco. En serio, dio exactamente el mismo resultado,
-                    solo que sin efectos secundarios.
-                </div>
-                <div class="comment-footer">Me Gusta · Comentar · Compartir · 3 h</div>
+                <div class="comment-footer">Me Gusta · Comentar · Compartir · 1 h</div>
             </div>
 
             <!-- Comment 5 - Maria del Carmen -->
-            <div class="comment">
+            <div class="comment-reply">
                 <div class="comment-header">
                     <img src="images/maria del.jpeg" alt="María del Carmen Rodríguez" class="comment-avatar">
-                    <div class="comment-name">María del Carmen Rodríguez</div>
-                </div>
-                <div class="comment-text">
-                    ¿En serio? Estaba pensando en comprar unas plumas de Mounjaro, ¿será que mejor lo dejo
-                    y pruebo este truco primero? ¿Qué me recomiendas?
+                    <div class="comment-content">
+                        <div class="comment-name">María del Carmen Rodríguez</div>
+                        <div class="comment-text">
+                            ¿En serio? Estaba pensando en comprar unas plumas de Mounjaro, ¿será que mejor lo dejo y pruebo este truco primero? ¿Qué me recomiendas?
+                        </div>
+                    </div>
                 </div>
                 <div class="comment-footer">Me Gusta · Comentar · Compartir · 3 h</div>
             </div>
 
             <!-- Comment 6 - Guadalupe Response -->
-            <div class="comment" style="margin-left: 30px;">
+            <div class="comment-reply">
                 <div class="comment-header">
                     <img src="images/guadalupe.jpeg" alt="Guadalupe Hernández" class="comment-avatar">
-                    <div class="comment-name">Guadalupe Hernández</div>
-                </div>
-                <div class="comment-text">
-                    No las compres, mujer, no vale la pena. Es mucho mejor que hagas este truco, te dará el
-                    mismo resultado y es infinitamente más barato de hacer, en serio.
+                    <div class="comment-content">
+                        <div class="comment-name">Guadalupe Hernández</div>
+                        <div class="comment-text">
+                            No las compres, mujer, no vale la pena. Es mucho mejor que hagas este truco, te dará el mismo resultado y es infinitamente más barato de hacer, en serio.
+                        </div>
+                    </div>
                 </div>
                 <div class="comment-footer">Me Gusta · Comentar · Compartir · 1 h</div>
             </div>
 
             <!-- Comment 7 - Maria Response -->
-            <div class="comment" style="margin-left: 30px;">
+            <div class="comment-reply">
                 <div class="comment-header">
                     <img src="images/maria del.jpeg" alt="María del Carmen Rodríguez" class="comment-avatar">
-                    <div class="comment-name">María del Carmen Rodríguez</div>
-                </div>
-                <div class="comment-text">
-                    Ay, qué bueno saberlo, porque ya estaba por endeudarme para comprar esas plumas. ¡Gracias ❤️!
+                    <div class="comment-content">
+                        <div class="comment-name">María del Carmen Rodríguez</div>
+                        <div class="comment-text">
+                            Ay, qué bueno saberlo, porque ya estaba por endeudarme para comprar esas plumas. ¡Gracias ❤️!
+                        </div>
+                    </div>
                 </div>
                 <div class="comment-footer">Me Gusta · Comentar · Compartir · 45 min</div>
             </div>
@@ -303,12 +313,12 @@
             <div class="comment">
                 <div class="comment-header">
                     <img src="images/claudia.jpeg" alt="Claudia Jiménez" class="comment-avatar">
-                    <div class="comment-name">Claudia Jiménez</div>
-                </div>
-                <div class="comment-text">
-                    Mi hija me mostró este video y le dije que era una tontería… ahora aquí estoy, haciendo
-                    el truco y teniendo que venir a felicitar porque funcionó muy bien 😂😂😂. Ya logré perder
-                    11 kilos, ¡muchísimas gracias!
+                    <div class="comment-content">
+                        <div class="comment-name">Claudia Jiménez</div>
+                        <div class="comment-text">
+                            Mi hija me mostró este video y le dije que era una tontería… ahora aquí estoy, haciendo el truco y teniendo que venir a felicitar porque funcionó muy bien 😂😂😂. Ya logré perder 11 kilos, ¡muchísimas gracias!
+                        </div>
+                    </div>
                 </div>
                 <div class="comment-footer">Me Gusta · Comentar · Compartir · 2 h</div>
             </div>
@@ -317,12 +327,12 @@
             <div class="comment">
                 <div class="comment-header">
                     <img src="images/adriana.jpg" alt="Adriana Torres" class="comment-avatar">
-                    <div class="comment-name">Adriana Torres</div>
-                </div>
-                <div class="comment-text">
-                    Hoy cumplí exactamente 30 días usándolo y logré perder 14 kilos. Esto es increíblemente
-                    bueno, y además es fácil de hacer. ¡Que Dios los bendiga por mostrarnos esto a nosotras
-                    las mujeres!
+                    <div class="comment-content">
+                        <div class="comment-name">Adriana Torres</div>
+                        <div class="comment-text">
+                            Hoy cumplí exactamente 30 días usándolo y logré perder 14 kilos. Esto es increíblemente bueno, y además es fácil de hacer. ¡Que Dios los bendiga por mostrarnos esto a nosotras las mujeres!
+                        </div>
+                    </div>
                 </div>
                 <div class="comment-footer">Me Gusta · Comentar · Compartir · 2 h</div>
             </div>
@@ -331,12 +341,12 @@
             <div class="comment">
                 <div class="comment-header">
                     <img src="images/beatriz.jpeg" alt="Beatriz Mendonza" class="comment-avatar">
-                    <div class="comment-name">Beatriz Mendonza</div>
-                </div>
-                <div class="comment-text">
-                    Wow, empecé a hacerlo anteayer y hoy ya bajé dos kilos y sin hinchazón. ¡Qué locura!
-                    El próximo mes vuelvo para contar cuántos kilos perdí en total, pero desde ya estoy
-                    impresionada…
+                    <div class="comment-content">
+                        <div class="comment-name">Beatriz Mendonza</div>
+                        <div class="comment-text">
+                            Wow, empecé a hacerlo anteayer y hoy ya bajé dos kilos y sin hinchazón. ¡Qué locura! El próximo mes vuelvo para contar cuántos kilos perdí en total, pero desde ya estoy impresionada…
+                        </div>
+                    </div>
                 </div>
                 <div class="comment-footer">Me Gusta · Comentar · Compartir · 3 h</div>
             </div>
